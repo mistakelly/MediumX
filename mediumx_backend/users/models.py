@@ -35,7 +35,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         return super().get_username()
 
     def __str__(self) -> str:
-        return f'{self.username} {self.email}'
+        return f'{self.username} {self.email} {self.date_joined}'
 
 
 class UserProfile(models.Model):
