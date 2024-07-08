@@ -97,3 +97,77 @@ class UserAPIView(APIView, CRUDOperationMixin):
         except Exception as e:
             return Response({'error': str(e)})
 
+
+class UserDetailAPIView(APIView, CRUDOperationMixin):
+    """
+    API view to handle operations related to a single user.
+    This includes retrieving, updating, and deleting a user.
+    """
+
+    serializer_class = UserSerializer
+
+    def get(self, request: Request, pk: int) -> Response:
+        """
+        Retrieve a user by their primary key (ID).
+        pk (int): The primary key of the user.
+        """
+        try:
+            # Get user object by pk using the custom get_single_obj method from CRUDOperationMixin class
+            user = self.get_single_obj(pk, User)
+
+            serializer = self.serializer_class(user)
+
+            return Response({'message': 'User retrieved successfully', 'user': serializer.data})
+
+        except ObjectDoesNotExist as e:
+            return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as e:
+            return Response({'error': str(e)})
+
+    def put(self, request: Request, pk: int) -> Response:
+        """
+        Update a user's data.
+        """
+        try:
+            # Retrieve the user object by pk
+            user = self.get_single_obj(pk, User)
+
+            # Initialize the serializer with user data and request data
+            serializer = self.serializer_class(user, data=request.data)
+
+            # Validate the serializer data using the custom mixin method
+            self.validate_serializer(serializer)
+
+            # Save the updated user data
+            serializer.save()
+            return Response({'message': 'User successfully updated', 'user': serializer.data}, status=status.HTTP_200_OK)
+
+        except ObjectDoesNotExist as e:
+            # Return error if user is not found
+            return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
+
+        except SerializerValidationException as e:
+            # Return validation error response
+            return Response({'error': e.detail}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as e:
+            return Response({'error': str(e)})
+
+    def delete(self, request: Request, pk: int) -> Response:
+        """
+        Delete a user by their primary key (ID).
+        """
+        try:
+            user = User.objects.get(pk=pk)
+
+            # Delete the user
+            user.delete()
+            return Response({'message': 'User successfully deleted'}, status=status.HTTP_204_NO_CONTENT)
+
+        except ObjectDoesNotExist as e:
+            # Return error if user is not found
+            return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as e:
+            return Response({'error': str(e)})
