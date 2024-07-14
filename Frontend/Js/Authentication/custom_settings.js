@@ -24,18 +24,17 @@ let writeLink = document.querySelector(".write-link");
 
 // Helper Functions
 
-// Function to handle closing the modal when clicking outside of it
+// Function to handle closing the modal when clicking outside of it (window object)
 export function closeModalOnBodyClick(event) {
   if (event.target.classList.contains("modal-active")) {
-    toggleModalVisibility();
+    closeAuthModal()
   }
 }
 
 // Function responsible for changing the state of the auth modal
 function toggleModalVisibility() {
-  modal.classList.toggle("hide-modal");
-  body.classList.toggle("modal-active");
-  customEmailModalPage.classList.add("hide-modal");
+  modal.classList.remove("hide-modal");
+  body.classList.add("modal-active");
 }
 
 // Function Responsible for closing Modals
@@ -50,6 +49,7 @@ export function customEmailSignupModal() {
   if (customEmailModallBtn) {
     customEmailModallBtn.addEventListener("click", () => {
       toggleModalVisibility();
+      // body.classList.add('modal-active')
       customEmailModalPage.classList.toggle("hide-modal");
       console.log("just clicked");
     });

@@ -1,4 +1,4 @@
-export function userFeed() {
+export function userInterest() {
   const buttons = document.querySelectorAll(".btn");
   // Initialize an array to store user interest IDs
   let userInterestIDsArray = [];
@@ -53,20 +53,4 @@ export function userFeed() {
       console.log(selectedInterestCount);
     });
   });
-}
-
-export function emailSignupModal() {
-  let emailInput = document.querySelector(".register-email");
-  // add dom content load to make sure the email input is loaded before we add an event
-  if (emailInput) {
-    emailInput.addEventListener("input", (e) => {
-      let emailvalue = emailInput.value;
-      // check if email has @gmail in it
-      if (emailvalue.includes("@gm")) {
-        document.querySelector(".display-email").classList.add("show-email");
-      } else {
-        document.querySelector(".display-email").classList.remove("show-email");
-      }
-    });
-  }
 }
