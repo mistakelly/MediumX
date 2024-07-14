@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.medium-logo {
+  width: 200px;
+  margin-top: 30px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  /* height: ; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  margin-top: 5rem;
+}
+
+.container {
+  text-align: center;
+  /* background-color: red; */
+  margin-top: 1rem;
+}
+
+
+.invalid-username {
+  animation: zoom-in 0.5s ease-out forwards;
+}
+
+/* create a two sideways shake */
+
+@keyframes zoom-in {
+  0% {
+    /* transform: scale(0.9); */
+    transform: translateX(-10px);
+
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0px);
+
+  }
+}
+
+section h4 {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  font-family: medium-marketing-display-font, Georgia, Cambria,
+    "Times New Roman", Times, serif;
+}
+
+form * {
+  display: block;
+}
+
+.form-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.create-username {
+  width: 288.023px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;
+  margin: 1rem auto;
+  user-select: none;
+}
+
+.create-username:focus {
+  outline: none;
+}
+
+.show-email {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.show-email p:first-child {
+  margin-bottom: 0.9rem;
+}
+
+.create-username-btn {
+  margin: 2rem auto;
+  padding: 1rem 4rem;
+  border-radius: 40px;
+  border: none;
+  color: white;
+  font-weight: 100;
+  color: gray;
+  background: rgb(239, 238, 238);
+  cursor: not-allowed;
+}
+
+.form-container input:focus {
+  outline: none;
+}
+
+/* custom styles for create username form, used by javascript. */
+
+/* input styles */
+.username-taken {
+  border-bottom: 2px solid red;
+}
+
+.username-avail {
+  border-bottom: 2px solid rgb(26, 237, 26);
+}
+
+/* button styles */
+.create-username-avail-btn {
+  cursor: pointer;
+  background-color: rgb(26, 237, 26);
+  color: white;
+  cursor: pointer;
+}
+
+/* button disabled */
+.create-username-btn-not-avail {
+  cursor: not-allowed;
+  background-color: none;
+  /* background-color: rgb(224, 150, 150); */
+  color: gray;
+}

@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 10px;
+}
+
+
+header {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 80px;
+    /* background: rebeccapurple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-icon {
+    width: 200px;
+    /* background-color: blue; */
+}
+
+
+
+.intro {
+    height: 20vh;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+.intro p {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.container {
+    /* background: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#interests-buttons {
+    /* background-color: blue; */
+    width: 100rem;
+    display: grid;
+    /* Use CSS Grid Layout */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    #interests-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    
+}
+
+
+
+.btn {
+    padding: 1.6rem 8rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-bottom: .4rem;
+    border-radius: 20px;
+    border: none;
+}
+
+.btn-clicked {
+    border: 2px solid green;
+    color: green;
+}
+
+/* smooth transitionin the hover */
+.btn {
+    transition: all .3s;
+}
+
+
+.form a {
+    text-decoration: none;
+    color: green;
+    font-size: 1.5rem;
+    display: block;
+    margin: 4rem 0 1rem 0;
+    text-align: center;
+}
+
+/* form a hover should have a line under and a smooth transition */
+.form a:hover {
+    text-decoration: underline;
+    transition: all .3s;
+    color: black;
+}
+
+.btn-primary {
+    margin: 0 auto;
+    display: block;
+    font-size: 1.5rem;
+}
+
+.btn-primary-submit {
+    background-color: green;
+    color: white;
+    transition: all .3s;
+}
