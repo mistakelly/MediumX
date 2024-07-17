@@ -15,15 +15,13 @@ Classes:
 Utility Classes:
     - CRUDOperationMixin: Provides common methods for retrieving objects and 
       validating serializers.
-    - SerializerValidationException: Custom exception raised for serializer 
-      validation errors (400 Bad Request).
+
 
 Core Methods:
-    - CRUDOperationMixin.get_single_obj(pk, model): Retrieves an object by its 
-      primary key (pk). Raises `ObjectDoesNotExist` if not found.
-    - CRUDOperationMixin.serialize_obj(serializer): Validates serializer, raising 
-      `SerializerValidationException` if invalid.
-
+    - CRUDOperationMixin.get_single_obj(pk, model, error):
+        Retrieves an object by its primary key (pk).
+        error parameter is the custom error to raise in the view function.
+        Raises `ObjectDoesNotExist` if not found.
 """
 
 from rest_framework.views import APIView
@@ -32,12 +30,10 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from django.contrib.auth import get_user_model
-from django.core.exceptions import ObjectDoesNotExist
 
 # CUSTOM IMPORTS
 from .serializer import UserSerializer
 from utils.mixins import CRUDOperationMixin
-from utils.exception import SerializerValidationException
 
 # Get the User model
 User = get_user_model()
@@ -57,7 +53,7 @@ class UserAPIView(APIView, CRUDOperationMixin):
             users = User.objects.all()
 
             # If no users exist, provide a registration URL.
-            #NOTE: {Used .exists() on the users queryset for optimization.
+            # NOTE: {Used .exists() on the users queryset for optimization.
             # This prevents Django from retrieving all fields of all users (which happens if we simply check `if users`),
             # and instead only checks whether any records exist in the database, improving performance.}
             if not users.exists():
@@ -81,21 +77,19 @@ class UserAPIView(APIView, CRUDOperationMixin):
         """
         Create a new user.
         """
+
         try:
             # Initialize serializer with data from the request
             serializer = self.serializer_class(data=request.data)
 
             # Validate and save the user data using the custom mixin method
-            self.validate_serializer(serializer)
+            serializer.is_valid(raise_exception=True)
             serializer.save()
 
-            return Response({'message': 'User successfully created', 'user': serializer.data})
+            return Response({'message': 'User successfully created', 'user': serializer.data}, status=status.HTTP_201_CREATED)
 
-        except SerializerValidationException as e:
-            return Response({'error': e.detail}, status=status.HTTP_404_NOT_FOUND)
-
-        except Exception as e:
-            return Response({'error': str(e)})
+        except Exception as exc:
+            return Response({'error': str(exc)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class UserDetailAPIView(APIView, CRUDOperationMixin):
@@ -111,19 +105,18 @@ class UserDetailAPIView(APIView, CRUDOperationMixin):
         Retrieve a user by their primary key (ID).
         pk (int): The primary key of the user.
         """
+
         try:
             # Get user object by pk using the custom get_single_obj method from CRUDOperationMixin class
-            user = self.get_single_obj(pk, User)
+            user = self.get_single_obj(
+                pk, User, error=f'User with id <{pk}> not found')
 
             serializer = self.serializer_class(user)
 
             return Response({'message': 'User retrieved successfully', 'user': serializer.data})
 
-        except ObjectDoesNotExist as e:
-            return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
-
-        except Exception as e:
-            return Response({'error': str(e)})
+        except Exception as exc:
+            return Response({'error': str(exc)}, status=status.HTTP_400_BAD_REQUEST)
 
     def put(self, request: Request, pk: int) -> Response:
         """
@@ -131,43 +124,32 @@ class UserDetailAPIView(APIView, CRUDOperationMixin):
         """
         try:
             # Retrieve the user object by pk
-            user = self.get_single_obj(pk, User)
+            user = self.get_single_obj(
+                pk, User, error=f'User with id <{pk}> not found')
 
             # Initialize the serializer with user data and request data
             serializer = self.serializer_class(user, data=request.data)
 
-            # Validate the serializer data using the custom mixin method
-            self.validate_serializer(serializer)
+            serializer.is_valid(raise_exception=True)
 
             # Save the updated user data
             serializer.save()
             return Response({'message': 'User successfully updated', 'user': serializer.data}, status=status.HTTP_200_OK)
 
-        except ObjectDoesNotExist as e:
-            # Return error if user is not found
-            return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
-
-        except SerializerValidationException as e:
-            # Return validation error response
-            return Response({'error': e.detail}, status=status.HTTP_404_NOT_FOUND)
-
-        except Exception as e:
-            return Response({'error': str(e)})
+        except Exception as exc:
+            return Response({'error': str(exc)}, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request: Request, pk: int) -> Response:
         """
         Delete a user by their primary key (ID).
         """
         try:
-            user = User.objects.get(pk=pk)
+            user = self.get_single_obj(
+                pk, User, error=f'User with id <{pk}> not found')
 
             # Delete the user
             user.delete()
             return Response({'message': 'User successfully deleted'}, status=status.HTTP_204_NO_CONTENT)
 
-        except ObjectDoesNotExist as e:
-            # Return error if user is not found
-            return Response({'error': str(e)}, status=status.HTTP_404_NOT_FOUND)
-
-        except Exception as e:
-            return Response({'error': str(e)})
+        except Exception as exc:
+            return Response({'error': str(exc)}, status=status.HTTP_400_BAD_REQUEST)
