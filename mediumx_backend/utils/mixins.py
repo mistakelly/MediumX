@@ -1,16 +1,18 @@
 from django.core.exceptions import ObjectDoesNotExist
-from utils.exception import SerializerValidationException
+
+from django.contrib.auth import get_user_model
+
+from users.models import CustomUser
+
+# User = get_user_model()
 
 class CRUDOperationMixin():
-    def get_single_obj(self, pk: int, model):
+    def get_single_obj(self, pk: int, model: CustomUser, error=None):
 
         try: 
             obj = model.objects.get(pk=pk)
         except model.DoesNotExist:
-            raise ObjectDoesNotExist(f'{model.__name__} with id <{pk}> not found')
+            # use the _meta property to get the model name.
+            raise ObjectDoesNotExist(error)
         
         return obj
-           
-    def validate_serializer(self, serializer):
-        if not serializer.is_valid():
-            raise SerializerValidationException(serializer.errors)
