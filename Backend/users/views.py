@@ -1,5 +1,5 @@
 # django imports
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import get_user_model
 from django.http import HttpRequest
 import socket
@@ -22,6 +22,7 @@ from django.contrib.auth import get_user_model
 
 from users.email_verification import send_email_confirmation_link
 
+
 # helper function, to validate if request is an ajax request.
 def is_ajax(request):
     return request.headers.get("x-requested-with") == "XMLHttpRequest"
@@ -38,34 +39,17 @@ def checkusernameavailability(request: HttpRequest):
     Returns:
         JsonResponse: The JSON response containing the availability status of the username.
     """
-    print('I just touched the get username function')
+    print("I just touched the get username function")
     username = request.GET.get("username")
     exists = get_user_model().objects.filter(username=username).exists()
     return JsonResponse({"available": not exists})
 
 
-def decide_homepage(request: HttpRequest):
-    """
-    This view function is responsible for rendering the appropriate homepage
-    based on the authentication status of the user.
 
-    If the user is authenticated, it renders the private homepage.
-    If the user is not authenticated, it renders the public homepage with an email registration form.
+def homepage(request: HttpRequest) -> HttpResponse:
+    # return HttpResponse("<h1>Django Homepage</h1>")
+    return render(request, template_name='home.html')
 
-    reason why I decided to go this way, is because I want both the public and private homepage of the application to be accessed using the same url (https//:example.com).
-
-    Args:
-        request (HttpRequest): The HTTP request object.
-
-    Returns:
-        HttpResponse: The rendered homepage response.
-    """
-    form = EmailRegistrationForm()
-    if request.user.is_authenticated:
-        return render(request, "private/index.html")
-    else:
-        context = {"form": form, "title": "MediumX - ExtendedMedium"}
-        return render(request, "public/index.html", context)
 
 
 def authenticate_user(request: HttpRequest):

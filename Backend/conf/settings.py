@@ -27,7 +27,8 @@ SECRET_KEY = os.getenv("CSFREE_BLOG_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -92,7 +93,7 @@ AUTH_USER_MODEL = "users.User"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        # "DIRS": [BASE_DIR / "templates"],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -204,6 +205,7 @@ SOCIALACCOUNT_PROVIDERS = {
         "AUTH_PARAMS": {
             "access_type": "online",
         },
+        "REDIRECT_URI": "http://127.0.0.1:8000/accounts/google/login/callback/",
     }
 }
 
@@ -229,3 +231,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "http://localhost:5500",
 ]
+
+# CSRF_TRUSTED_ORIGINS = [
+#     'http://127.0.0.1:5500',  # Add this line
+#     'http://localhost:5500',  # You might also want to include localhost
+# ]
+
+CSRF_COOKIE_HTTPONLY = False  # Allow JavaScript to read the CSRF token
+

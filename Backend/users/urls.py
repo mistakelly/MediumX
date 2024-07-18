@@ -1,5 +1,5 @@
 from users.views import (
-    decide_homepage,
+    homepage,
     authenticate_user, 
     checkusernameavailability
 )
@@ -17,7 +17,7 @@ from django.urls import path
 
 # URL patterns responsible for routing requests to the appropriate view functions.
 urlpatterns = [
-    path("", decide_homepage, name="decide_homepage"),
+    path("", homepage, name="decide_homepage"),
     path("authenticate/", authenticate_user, name="authenticate"),
     path("create_username/<str:email>/", create_username, name="create_username"),
     path("confirm_email/<str:uid>/<str:token>/", confirm_email, name="confirm_email"),

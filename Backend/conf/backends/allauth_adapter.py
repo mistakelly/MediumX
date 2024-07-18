@@ -3,8 +3,9 @@ from allauth.socialaccount.adapter import DefaultSocialAccountAdapter
 from allauth.core.exceptions import ImmediateHttpResponse
 from allauth.socialaccount.models import SocialLogin
 
+
 # generic imports
-from django.shortcuts import redirect
+from django.shortcuts import redirect, HttpResponse
 from django.http import HttpRequest
 from django.urls import reverse
 
@@ -23,6 +24,7 @@ class CustomSocialAccountAdapter(DefaultSocialAccountAdapter):
         social provider, but before the login is actually processed
         (and before the pre_social_login signal is emitted).
         """
+        print('I am over here')
         user = sociallogin.user
         hashed_email = urlsafe_base64_encode(force_bytes(user.email))
         # Redirect to the create_username page with the email as a URL parameter
@@ -30,6 +32,7 @@ class CustomSocialAccountAdapter(DefaultSocialAccountAdapter):
 
         # Check if the user's email already exists in the database
         if get_user_model().objects.filter(email=user.email).exists():
+            return HttpResponse('User authenticated')
             if not user.username:
                 raise ImmediateHttpResponse(redirect(url))
             return redirect("decide_homepage")
