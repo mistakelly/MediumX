@@ -23,6 +23,13 @@ import {
   usernameInput,
 } from "./Authentication/create_username.js";
 
+
+import { feedBtn } from "./Authenticated/home.js";
+// console.log(feedBtn)
+
+// import { googleBtn } from "./Authentication/SocialAuthentication/google-auth.js";
+// console.log("google btn", googleBtn);
+
 /*********************************** */
 
 window.addEventListener("click", closeModalOnBodyClick);
