@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>profile</title>
+    <link rel="stylesheet" href="/Css/Authenticated/profile.css" />
+    <link rel="stylesheet" href="/Css/Authenticated/home-header.css" />
+    <link rel="stylesheet" href="/Css/Authenticated/posts.css" />
+  </head>
+  <body>
+    <header class="navigation">
+      <home-header></home-header>
+    </header>
+
+    <!-- <div class="feedback"></div> -->
+    <!-- section -->
+    <section class="section-container">
+      <main class="content-item posts-wrapper">
+        <div class="post-header">
+          <div class="username">
+            <h1>Kelly Ayo</h1>
+          </div>
+
+          <div class="profile-link">
+            <svg width="25" height="25" class="cb in">
+              <path
+                fill-rule="evenodd"
+                d="M5 12.5q0 .828.586 1.414.585.585 1.414.586.828 0 1.414-.586.585-.586.586-1.414 0-.828-.586-1.414A1.93 1.93 0 0 0 7 10.5q-.828 0-1.414.586-.585.586-.586 1.414m5.617 0q0 .828.586 1.414.587.585 1.414.586.828 0 1.414-.586t.586-1.414-.586-1.414a1.93 1.93 0 0 0-1.414-.586q-.827 0-1.414.586-.586.586-.586 1.414m5.6 0q0 .828.586 1.414.585.585 1.432.586.827 0 1.413-.586t.587-1.414q0-.828-.587-1.414a1.93 1.93 0 0 0-1.413-.586q-.847 0-1.432.586t-.587 1.414z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+
+        <user-posts></user-posts>
+        <user-posts></user-posts>
+
+        <user-posts></user-posts>
+      </main>
+
+      <div class="content-item user-profile">
+        <div class="user-profile-content">
+          <div class="profile-details">
+            <div class="profile-picture">
+              <img src="/Assets/imgages/profile-pic.jpg" alt="" />
+            </div>
+            <div class="profile-name">
+              <h5>Kelly Okoye</h5>
+            </div>
+            <div class="profile-follower-count">
+              <a href="#"> <span>17 </span>Followers</a>
+            </div>
+            <div class="profile-bio">
+              <p>
+                Welcome to my world —where we ignite your passion to Explore,
+                learn, love and discover many hidden facts with us
+              </p>
+            </div>
+            <div class="profile-edit-btn">
+              <a href="#">Edit Profile </a>
+            </div>
+          </div>
+
+          <div class="user-followers">
+            <h3>Following</h3>
+            <div class="followers-wrapper">
+              <div class="followers">
+                <div class="follower-info">
+                  <a href="#">
+                    <div class="follower-picture">
+                      <img src="/Assets/imgages/profile-pic.jpg" alt="" />
+                    </div>
+                    <h5>Kelly Ayo</h5>
+                  </a>
+                  <!-- <div class="follower-name">
+                  </div> -->
+                </div>
+
+                <div class="follower-see-more-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M4.385 12c0 .55.2 1.02.59 1.41.39.4.86.59 1.41.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.02.2-1.41.59-.4.39-.59.86-.59 1.41m5.62 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.42.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.03.2-1.42.59s-.58.86-.58 1.41m5.6 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.43.59s1.03-.2 1.42-.59.58-.86.58-1.41-.2-1.02-.58-1.41a1.93 1.93 0 0 0-1.42-.59c-.56 0-1.04.2-1.43.59s-.58.86-.58 1.41"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <!-- ... -->
+                </div>
+              </div>
+              <div class="followers">
+                <div class="follower-info">
+                  <a href="#">
+                    <div class="follower-picture">
+                      <img src="/Assets/imgages/profile-pic.jpg" alt="" />
+                    </div>
+                    <h5>Kelly Ayo</h5>
+                  </a>
+                  <!-- <div class="follower-name">
+                  </div> -->
+                </div>
+
+                <div class="follower-see-more-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M4.385 12c0 .55.2 1.02.59 1.41.39.4.86.59 1.41.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.02.2-1.41.59-.4.39-.59.86-.59 1.41m5.62 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.42.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.03.2-1.42.59s-.58.86-.58 1.41m5.6 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.43.59s1.03-.2 1.42-.59.58-.86.58-1.41-.2-1.02-.58-1.41a1.93 1.93 0 0 0-1.42-.59c-.56 0-1.04.2-1.43.59s-.58.86-.58 1.41"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <!-- ... -->
+                </div>
+              </div>
+              <div class="followers">
+                <div class="follower-info">
+                  <a href="#">
+                    <div class="follower-picture">
+                      <img src="/Assets/imgages/profile-pic.jpg" alt="" />
+                    </div>
+                    <h5>Kelly Ayo</h5>
+                  </a>
+                  <!-- <div class="follower-name">
+                  </div> -->
+                </div>
+
+                <div class="follower-see-more-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M4.385 12c0 .55.2 1.02.59 1.41.39.4.86.59 1.41.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.02.2-1.41.59-.4.39-.59.86-.59 1.41m5.62 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.42.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.03.2-1.42.59s-.58.86-.58 1.41m5.6 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.43.59s1.03-.2 1.42-.59.58-.86.58-1.41-.2-1.02-.58-1.41a1.93 1.93 0 0 0-1.42-.59c-.56 0-1.04.2-1.43.59s-.58.86-.58 1.41"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <!-- ... -->
+                </div>
+              </div>
+              <div class="followers">
+                <div class="follower-info">
+                  <a href="#">
+                    <div class="follower-picture">
+                      <img src="/Assets/imgages/profile-pic.jpg" alt="" />
+                    </div>
+                    <h5>Kelly Ayo</h5>
+                  </a>
+                  <!-- <div class="follower-name">
+                  </div> -->
+                </div>
+
+                <div class="follower-see-more-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M4.385 12c0 .55.2 1.02.59 1.41.39.4.86.59 1.41.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.02.2-1.41.59-.4.39-.59.86-.59 1.41m5.62 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.42.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.03.2-1.42.59s-.58.86-.58 1.41m5.6 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.43.59s1.03-.2 1.42-.59.58-.86.58-1.41-.2-1.02-.58-1.41a1.93 1.93 0 0 0-1.42-.59c-.56 0-1.04.2-1.43.59s-.58.86-.58 1.41"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <!-- ... -->
+                </div>
+              </div>
+            </div>
+            <div class="see-more">
+              <p>See More <span>37</span></p>
+            </div>
+
+            <footer class="footer">
+              <div class="footer-content">
+                <a href="#"><p class="am">Help</p></a>
+              </div>
+              <div class="footer-content">
+                <a href="#"><p class="am">Status</p></a>
+              </div>
+              <div class="footer-content">
+                <a href="#"><p class="am">About</p></a>
+              </div>
+              <div class="footer-content">
+                <a href="#"><p class="am">Carriers</p></a>
+              </div>
+              <div class="footer-content">
+                <a href="#"><p class="am">Press</p></a>
+              </div>
+              <div class="footer-content">
+                <a href="#"><p class="am">Blog</p></a>
+              </div>
+              <div class="footer-content">
+                <a href="#"><p class="am">Privacy</p></a>
+              </div>
+              <div class="footer-content">
+                <a href="#"><p class="am">Terms</p></a>
+              </div>
+              <div class="footer-content">
+                <a href="#"><p class="am">Text to speech</p></a>
+              </div>
+              <div class="footer-content">
+                <a href="#"><p class="am">Teams</p></a>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="/Js/Authenticated/shared.js"></script>
+  </body>
+</html>
+
+<!-- 
+   
+<nav class="nav-container">
+  <div class="nav-item">
+    <button><a href="#">Home</a></button>
+  </div>
+  <div class="nav-item">
+    <button><a href="#">Lists</a></button>
+  </div>
+  <div class="nav-item">
+    <button><a href="#">About</a></button>
+  </div>
+</nav> -->
