@@ -1,5 +1,3 @@
-# Views
-
 """
 User and CRUD Operations API Views
 
@@ -7,8 +5,11 @@ This module defines views for handling user-related CRUD operations, including
 creating, retrieving, updating, and deleting users. It also includes utility 
 mixins and custom exception handling for validation.
 
-Classes:
-    - UserAPIView: Handles GET (list users) and POST (create user) requests.
+Functions <FBV>:
+    - register_user_api_view: Handles user registeration.
+
+Classes <CBV>: 
+    - UserAPIView: Handles GET (list users).
     - UserDetailAPIView: Handles GET (retrieve user by ID), PUT (update user), 
       and DELETE (delete user by ID) requests.
 
@@ -24,11 +25,15 @@ Core Methods:
         Raises `ObjectDoesNotExist` if not found.
 """
 
+# REST FRAMEWORK IMPORTS
+from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.exceptions import ValidationError
 
+# CUSTOM DJANGO IMPORTS
 from django.contrib.auth import get_user_model
 
 # CUSTOM IMPORTS
@@ -37,6 +42,29 @@ from utils.mixins import CRUDOperationMixin
 
 # Get the User model
 User = get_user_model()
+
+
+@api_view(['POST'])
+def register_user_api_view(request: Request) -> Response:
+    """
+    Create a new user.
+    """
+    try:
+        print('inside post request from the repath')
+        # Initialize serializer with data from the request
+        serializer = UserSerializer(data=request.data)
+
+        # Validate and save the user data
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        return Response({'message': 'User successfully created', 'user': serializer.data}, status=status.HTTP_201_CREATED)
+
+    except ValidationError as exc:  # Catch validation errors explicitly
+        return Response({'errors': exc.detail}, status=status.HTTP_400_BAD_REQUEST)
+
+    except Exception as exc:
+        return Response({'msg': 'An unexpected error occurred', 'error': str(exc)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class UserAPIView(APIView, CRUDOperationMixin):
@@ -73,23 +101,7 @@ class UserAPIView(APIView, CRUDOperationMixin):
         except Exception as e:
             return Response({'error': str(e)})
 
-    def post(self, request: Request) -> Response:
-        """
-        Create a new user.
-        """
-
-        try:
-            # Initialize serializer with data from the request
-            serializer = self.serializer_class(data=request.data)
-
-            # Validate and save the user data using the custom mixin method
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-
-            return Response({'message': 'User successfully created', 'user': serializer.data}, status=status.HTTP_201_CREATED)
-
-        except Exception as exc:
-            return Response({'error': str(exc)}, status=status.HTTP_400_BAD_REQUEST)
+    
 
 
 class UserDetailAPIView(APIView, CRUDOperationMixin):
