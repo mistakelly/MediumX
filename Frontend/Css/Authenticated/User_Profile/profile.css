@@ -1,18 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.6rem;
-  background-color: #f4f4f4;
-}
+/* imports */
+@import url("/Css/shared/general.css");
+@import url("/Css/Authenticated/Story/posts.css");
+@import url("/Css/shared/header.css");
+@import url('/Css/shared/drop_down.css');
 
 .feedback {
   width: 100%;
@@ -30,12 +20,14 @@ body {
   /* height: 70vh; */
   /* background: green; */
   display: flex;
+  z-index: -1;
 }
 
 .content-item {
   width: 100%;
   height: 100%;
   padding-top: 50px;
+  /* z-index: -1; */
 }
 
 .posts-wrapper {
@@ -49,6 +41,7 @@ body {
   width: 303px;
   border-left: 1px solid #ccc;
   height: 90vh;
+  /* z-index: -1; */
 }
 
 .post-header {
@@ -114,7 +107,7 @@ body {
 
 /* followers */
 
-.user-followers{
+.user-followers {
   /* background-color: orange; */
 }
 
@@ -159,24 +152,25 @@ body {
   gap: 1rem;
 }
 
-.see-more{
+.see-more {
   color: green;
   margin: 2rem 0 4rem 0;
 }
 
-
-.footer{
+.footer {
   /* background: red; */
   height: 40px;
 
   display: flex;
   flex-wrap: wrap;
-  gap: .5rem;;
+  gap: 0.5rem;
 }
 
-.footer .footer-content a{
+.footer .footer-content a {
   text-decoration: none;
   color: black;
   font-size: 1.2rem;
   font-weight: 200;
 }
+
+/* profile dropdown */

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- head -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>profile</title>
-    <link rel="stylesheet" href="/Css/Authenticated/profile.css" />
-    <link rel="stylesheet" href="/Css/Authenticated/home-header.css" />
-    <link rel="stylesheet" href="/Css/Authenticated/posts.css" />
+    <link rel="stylesheet" href="/Css/Authenticated//User_Profile/profile.css" />
   </head>
+
+  <!-- Body -->
   <body>
-    <header class="navigation">
+    <header>
       <home-header></home-header>
     </header>
 
     <!-- <div class="feedback"></div> -->
+
     <!-- section -->
     <section class="section-container">
       <main class="content-item posts-wrapper">
@@ -222,23 +224,12 @@
               </div>
             </footer>
           </div>
+          <!-- custom user profile dropdown menu define implementation in javascript -->
+          <user-profiledropdown></user-profiledropdown>
         </div>
       </div>
     </section>
-    <script src="/Js/Authenticated/shared.js"></script>
+    <script type="module" src="/Js/script.js" defer></script>
+
   </body>
 </html>
-
-<!-- 
-   
-<nav class="nav-container">
-  <div class="nav-item">
-    <button><a href="#">Home</a></button>
-  </div>
-  <div class="nav-item">
-    <button><a href="#">Lists</a></button>
-  </div>
-  <div class="nav-item">
-    <button><a href="#">About</a></button>
-  </div>
-</nav> -->

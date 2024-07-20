@@ -1,14 +1,20 @@
-/************Authentication/Custom_settings.***/
+/************General settings.***/
 import {
   closeModalOnBodyClick,
   customEmailSignupModal,
   closeModal,
   authModal,
-} from "./Authentication/custom_settings.js";
+} from "./shared/custom_settings.js";
 
+import {
+  HomeHeader,
+  Posts,
+  userProfileDropdown,
+} from "./shared/custom_html.js";
+
+import { toggleProfileModal } from "./shared/user_modal.js";
 
 /********Authenticaation/select_interest***********/
-
 import { userInterest } from "./Authentication/select_interest.js";
 
 import {
@@ -23,6 +29,7 @@ import {
   usernameInput,
 } from "./Authentication/create_username.js";
 
+// import { toggleProfileModal, userDropdown } from "./Authenticated/user_modal.js";
 
 import { feedBtn } from "./Authenticated/home.js";
 // console.log(feedBtn)
@@ -53,3 +60,16 @@ if (emailSubmitForm) {
 if (usernameInput) {
   usernameInput.addEventListener("input", ajaxvalidateUsername);
 }
+
+// custom html
+// custom html classes intialization.
+customElements.define("home-header", HomeHeader);
+customElements.define("user-posts", Posts);
+customElements.define("user-profiledropdown", userProfileDropdown);
+
+// profile modal.
+// user_modal.js
+document.addEventListener("DOMContentLoaded", () => {
+  const userDropdown = document.querySelector(".profile-icon");
+  userDropdown.addEventListener("click", toggleProfileModal);
+});
