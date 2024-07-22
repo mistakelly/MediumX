@@ -10,6 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
+        # FIXME: date_joined not returned to the user after registeration.
         fields = ['id', 'username', 'password', 'date_joined']
 
     def save(self, **kwargs):

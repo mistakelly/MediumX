@@ -11,14 +11,12 @@ from .manager import UserManager
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=100, unique=True)
     email = models.EmailField(blank=True, null=True, unique=True)
-    gender = models.CharField(max_length=10)
     date_joined = models.DateTimeField(auto_now_add=True)
     updated_at= models.DateTimeField(auto_now=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
-    profile_img = models.FileField(
-        upload_to='user_profile', null=True, blank=True)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email']
@@ -39,9 +37,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='users')
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='profile')
+    profile_img = models.FileField(upload_to='user_profile', null=True, blank=True)
     bio = models.TextField(max_length=255, blank=True)
     birthdate = models.DateTimeField(null=True)
+    gender = models.CharField(max_length=10, null=True)
     post_recommend = models.ManyToManyField(PostCategory, related_name='categories')
     location = models.CharField(max_length=100, blank=True)
     phone_number = models.CharField(max_length=15, blank=True)
@@ -55,6 +55,7 @@ class UserProfile(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
+        db_table = 'user_profile'
         verbose_name_plural = 'user_profiles'
 
     def __str__(self) -> str:
