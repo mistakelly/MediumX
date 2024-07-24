@@ -1,1 +1,78 @@
 @import url('/Css/shared/general.css');
+
+body{
+    /* background: blue; */
+}
+
+.header{
+    /* background: red; */
+    width: 100%;
+    height: 50px;
+    margin-bottom: 2rem;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* background: pink; */
+    height: 100%;
+    margin-top: 2rem;
+}
+
+.nav .nav-right{
+    display: flex;
+    align-items: center;
+    /* background-color: green; */
+    gap: 1rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.nav .nav-left{
+    display: flex;
+    align-items: center;
+    /* background-color: yellow; */
+    gap: 1.5rem;
+}
+
+.nav .nav-left div:nth-child(4){
+    width: 40px;
+    height: 40px;
+}
+
+.nav .nav-left div:nth-child(2) button{
+    background:rgb(202,226,200);
+    color: white;
+    border: none;   
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 100;
+
+}
+
+.nav .nav-left:last-child img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.main{
+    /* background: red; */
+    width: 50%;
+    height: 85vh;
+    margin: 0 auto;
+
+}
+/* 
+.editor-container {
+    border: none;
+    box-shadow: none;
+    background: #f9f9f9;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+   */

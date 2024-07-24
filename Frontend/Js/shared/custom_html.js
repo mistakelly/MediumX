@@ -1,9 +1,6 @@
 export class HomeHeader extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `
-        
-        
-        
+    this.innerHTML = `    
 <nav class="navigation">
 <div class="nav-items nav-left">
   <div class="nav-icon">
@@ -93,7 +90,7 @@ export class HomeHeader extends HTMLElement {
     <div class="profile-icon">
    
 
-    <img src="/Assets/imgages/spiderman.jpg" alt="">
+    <img src="/Assets/images/spiderman.jpg" alt="">
     </div>
   </ul>
 </div>
@@ -102,13 +99,13 @@ export class HomeHeader extends HTMLElement {
   }
 }
 
-export class Posts extends HTMLElement{
-    connectedCallback(){
-        this.innerHTML = `
+export class Posts extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
         <div class="blog-container">
             <div class="user-info">
               <div class="user-img">
-                <img src="/Assets/imgages/user1.png" alt="" />
+                <img src="/Assets/images/user1.png" alt="" />
               </div>
               <div class="user-name">
                 <span>kelly ayo</span>
@@ -234,20 +231,20 @@ export class Posts extends HTMLElement{
                 </main>
                 <div class="blog-sidebar">
                   <div class="blog-img">
-                    <img src="/Assets/imgages/blog_image.jpg" alt="" />
+                    <img src="/Assets/images/blog_image.jpg" alt="" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
         
-        `
-    }
+        `;
+  }
 }
 
-export class userProfileDropdown extends HTMLElement{
-    connectedCallback() {
-        this.innerHTML = ` <div class="dropdown hidemodal">
+export class userProfileDropdown extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = ` <div class="dropdown hidemodal">
         <!-- user assests -->
         <div class="dropdown-profile-link">
           <a href="#">
@@ -403,9 +400,26 @@ export class userProfileDropdown extends HTMLElement{
           </div>
         </div>
       </div>
-      `
-    }
+      `;
+  }
 }
 
-
+export class MoreIcon extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = ` <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  fill="none"
+  viewBox="0 0 24 24"
+>
+  <path
+    fill="currentColor"
+    fill-rule="evenodd"
+    d="M4.385 12c0 .55.2 1.02.59 1.41.39.4.86.59 1.41.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.02.2-1.41.59-.4.39-.59.86-.59 1.41m5.62 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.42.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.03.2-1.42.59s-.58.86-.58 1.41m5.6 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.43.59s1.03-.2 1.42-.59.58-.86.58-1.41-.2-1.02-.58-1.41a1.93 1.93 0 0 0-1.42-.59c-.56 0-1.04.2-1.43.59s-.58.86-.58 1.41"
+    clip-rule="evenodd"
+  ></path>
+</svg>`;
+  }
+}
 

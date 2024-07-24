@@ -10,6 +10,7 @@ import {
   HomeHeader,
   Posts,
   userProfileDropdown,
+  MoreIcon,
 } from "./shared/custom_html.js";
 
 import { toggleProfileModal } from "./shared/user_modal.js";
@@ -66,10 +67,14 @@ if (usernameInput) {
 customElements.define("home-header", HomeHeader);
 customElements.define("user-posts", Posts);
 customElements.define("user-profiledropdown", userProfileDropdown);
+customElements.define("custom-more-icon", MoreIcon);
 
 // profile modal.
 // user_modal.js
 document.addEventListener("DOMContentLoaded", () => {
   const userDropdown = document.querySelector(".profile-icon");
-  userDropdown.addEventListener("click", toggleProfileModal);
+  
+  if (userDropdown) {
+    userDropdown.addEventListener("click", toggleProfileModal);
+  }
 });
