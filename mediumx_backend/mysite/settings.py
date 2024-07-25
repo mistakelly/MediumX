@@ -10,13 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+from pathlib import Path
 import os
 
 import pymysql
 pymysql.install_as_MySQLdb()
 
-
-from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,17 +42,27 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    ##################### THIRD PARTY LIBRARIES
+
     # rest framework
     'rest_framework',
+    # jwt authentication
+    'rest_framework_simplejwt',
+    # django extentions
     'django_extensions',
-     'debug_toolbar',
-	'corsheaders',
-    # custom apps
+    # django debug toobar for debuging out application
+    'debug_toolbar',
+    # django CORS headers for allowing cross-origin request.
+    'corsheaders',
+
+    # CUSTOM APPS
     'users',
     'posts'
 ]
 
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
@@ -63,6 +72,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # custom midddleware
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -107,7 +117,6 @@ DATABASES = {
         'PORT': '3306',       # MySQL default port
     }
 }
-
 
 
 # Password validation
@@ -163,7 +172,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 
 CORS_ALLOWED_ORIGINS = [
-  "http://127.0.0.1:5500"
+    "http://127.0.0.1:5500"
 
 ]
 
@@ -172,8 +181,16 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 MEDIA_ROOT_URL = '/media/'
 
-MEDIA_ROOT= BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / 'media'
 
+
+# DRF SETTINGS
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    )
+}
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_RENDERER_CLASSES': [

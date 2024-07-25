@@ -5,24 +5,25 @@ from django.contrib.auth.models import BaseUserManager
 class UserManager(BaseUserManager):
     user_perms = ['is_staff', 'is_superuser']
 
-    def _create_user(self, username: str, password: str, email: str, **extrafields: Dict[Any, str]):
+    def _create_user(self, username: str, password: str, email: str=None, **extrafields: Dict[Any, str]):
         required_fields = ['username', 'password']
 
         for field in required_fields:
             if not locals()[field]:
                 raise ValueError(
                     f'{field} cannot be null or empty, please provide a value for {field}')
+        
+        if email:
+            email = self.normalize_email(email)
 
-        email = self.normalize_email(email)
-
-        user = self.model(username=username, password=password,
-                          email=email, **extrafields)
+        user = self.model(username=username, password=password, email=email, **extrafields)
         user.set_password(password)
         user.save(using=self._db)
 
         return user
 
-    def create_user(self, username: str, password: str, email: str, **extrafields: Dict[Any, str]):
+    def create_user(self, username: str, password: str, email: str=None, **extrafields: Dict[Any, str]):
+        print('inside create user', **extrafields)
 
         # check if is_staff and is_super user is set to true for ordinary users
         for perm in self.user_perms:
