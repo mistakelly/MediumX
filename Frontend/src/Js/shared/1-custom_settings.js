@@ -1,33 +1,23 @@
-// General Selectors
-let body = document.body;
-let cancelIcon = document.querySelectorAll(".fa-times");
+// import all selectors from common.js
+import {
+  body,
+  cancelIcon,
+  getStarted,
+  modal,
+  modalTitle,
+  customEmailModalPage,
+  customEmailModallBtn,
+  googleSpan,
+  facebookSpan,
+  emailSpan,
+  authMessage,
+  authLink,
+  writeLink,
+} from "../common.js";
 
-// // Modal Selectors
-let getStarted = document.querySelectorAll(".get-started");
-let modal = document.querySelector(".auth-modal");
-
-let modalTitle = document.querySelector(".auth-title");
-let customEmailModalPage = document.querySelector(".custom-email-signup-page");
-let customEmailModallBtn = document.querySelector(".custom-email-signup");
-
-// Auth Button Span Selectors
-let googleSpan = document.querySelector(".google-span");
-let facebookSpan = document.querySelector(".facebook-span");
-let emailSpan = document.querySelector(".email-span");
-
-// Auth Footer Span Selector
-let authMessage = document.querySelector(".auth-message");
-let authLink = document.querySelector(".auth-link");
-
-// Write Link Selector
-let writeLink = document.querySelector(".write-link");
-
-// Helper Functions
-
-// Function to handle closing the modal when clicking outside of it (window object)
 export function closeModalOnBodyClick(event) {
   if (event.target.classList.contains("modal-active")) {
-    closeAuthModal()
+    closeAuthModal();
   }
 }
 
@@ -77,3 +67,6 @@ export function authModal() {
     });
   }
 }
+
+
+// call all functions

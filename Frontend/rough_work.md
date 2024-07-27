@@ -281,3 +281,219 @@ background: linear-gradient(
           </div>
         </ul>
       </div>
+
+
+
+
+      const path = require("path");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+  entry: {
+    main: "./src/index.js",
+    vendor: "./src/vendor.js",
+  },
+  
+  module: {
+    rules: [
+      // html loader
+      {
+        test: /\.html$/i,
+        use: [
+          {
+            loader: "html-loader",
+            options: {
+              sources: {
+                list: [
+                  {
+                    tag: "img",
+                    attribute: "src",
+                    type: "src",
+                  },
+                ],
+              },
+              esModule: false,
+            },
+          },
+        ],
+      },
+
+      // image loader
+      {
+        test: /\.(svg|png|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "images/[name].[hash][ext][query]",
+        },
+      },
+    ],
+  },
+  output: {
+    filename: "[name].[contenthash].js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+  },
+};
+
+
+// import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials";
+// import Bold from "@ckeditor/ckeditor5-basic-styles/src/bold";
+// import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph";
+// import Italic from "@ckeditor/ckeditor5-basic-styles/src/italic";
+
+// import BalloonEditor from "@ckeditor/ckeditor5-editor-balloon/src/ballooneditor";
+// import '../src/test.css';
+// // import BalloonEditor from "@ckeditor/ckeditor5-build-balloon-block";
+// const editorElement = document.querySelector("#editor"); // Ensure you have an element with this ID in your HTML
+
+// console.log(window.StyleSheet)
+
+// BalloonEditor.create(editorElement, {
+// })
+//   .then((editor) => {
+//     console.log("Editor was initialized", editor);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
+
+{
+  "name": "mediumx",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.common.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "author": "Kelvin Okoye",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-balloon-block": "^42.0.2",
+    "clean-webpack-plugin": "^4.0.0"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.9",
+    "@babel/preset-env": "^7.24.8",
+    "autoprefixer": "^10.4.19",
+    "babel-loader": "^9.1.3",
+    "core-js": "^3.37.1",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "cssnano": "^7.0.4",
+    "file-loader": "^6.2.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.0",
+    "image-webpack-loader": "^8.1.0",
+    "mini-css-extract-plugin": "^2.9.0",
+    "postcss": "^8.4.40",
+    "postcss-loader": "^8.1.1",
+    "postcss-pxtorem": "^6.1.0",
+    "style-loader": "^4.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "webpack-merge": "^6.0.1"
+  }
+}
+
+
+
+/************General settings.***/
+import styles from "../Css/styles.css";
+import {
+  closeModalOnBodyClick,
+  customEmailSignupModal,
+  closeModal,
+  authModal,
+} from "./shared/custom_settings.js";
+
+import {
+  HomeHeader,
+  Posts,
+  userProfileDropdown,
+  MoreIcon,
+} from "./shared/custom_html.js";
+
+import { toggleProfileModal } from "./shared/user_modal.js";
+
+/********Authenticaation/select_interest***********/
+import { userInterest } from "./Authentication/select_interest.js";
+
+import {
+  validateCustomEmailSignup,
+  emailInput,
+  handleEmailSubmit,
+  emailSubmitForm,
+} from "./Authentication/email_authentication.js";
+
+import {
+  ajaxvalidateUsername,
+  usernameInput,
+} from "./Authentication/create_username.js";
+
+// import { toggleProfileModal, userDropdown } from "./Authenticated/user_modal.js";
+
+import { feedBtn } from "./Authenticated/home.js";
+// console.log(feedBtn)
+
+// import { googleBtn } from "./Authentication/SocialAuthentication/google-auth.js";
+// console.log("google btn", googleBtn);
+
+/*********************************** */
+
+window.addEventListener("click", closeModalOnBodyClick);
+customEmailSignupModal();
+closeModal();
+authModal();
+/*********************************** */
+
+userInterest();
+/*********************************** */
+if (emailInput) {
+  emailInput.addEventListener("input", validateCustomEmailSignup);
+}
+
+if (emailSubmitForm) {
+  // Attach the handleEmailSubmit function to the form's submit event
+  emailSubmitForm.addEventListener("submit", handleEmailSubmit);
+}
+/*********************************** */
+
+if (usernameInput) {
+  usernameInput.addEventListener("input", ajaxvalidateUsername);
+}
+
+// custom html
+// custom html classes intialization.
+customElements.define("home-header", HomeHeader);
+customElements.define("user-posts", Posts);
+customElements.define("user-profiledropdown", userProfileDropdown);
+customElements.define("custom-more-icon", MoreIcon);
+
+// profile modal.
+// user_modal.js
+document.addEventListener("DOMContentLoaded", () => {
+  const userDropdown = document.querySelector(".profile-icon");
+  
+  if (userDropdown) {
+    userDropdown.addEventListener("click", toggleProfileModal);
+  }
+});
