@@ -1,2 +1,1 @@
-// import custom settings
-import "./shared/1-custom_settings.js";
+import "./Authentication/0-auth_modal.js"
