@@ -1,0 +1,27 @@
+:root {
+  --color-index-background: #f7f4ed;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-light-grey: #f4f4f4;
+  --color-semi-light-grey: #ccc;
+  --color-dark-grey: #333;
+  --color-success: #28a745;
+
+  --container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+  /* container widths */
+  --container-width-lg: 80%;
+  --container-width-md: 90%;
+  --container-width-sm: 95%;
+  --container-width-xl: 100%;
+  --center-container: 0 auto;
+  --trasition: all 480ms ease;
+}
+
+.feedback {
+  background: green;
+  width: 100%;
+  height: 5rem;
+  visibility: hidden;
+}
+
+/* --secondary: #6c757d; */
