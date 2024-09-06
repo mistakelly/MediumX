@@ -59,33 +59,29 @@
 .main {
   width: 95%;
   width: 90%;
-
   /* background: red; */
-  height: 70vh;
   margin: 0 auto;
   display: flex;
-  /* justify-content: space-between; */
-  /* gap: 1rem; */
 }
 
 .article {
   border-right: 1px solid #eee;
   /* background: pink; */
   width: 80%;
+  padding-top: 2rem;
 }
 
 .article__content {
   width: 95%;
-  height: 40vh;
-  /* background: blue; */
 }
 
 /* --------------------------------------------- MAIN HEADER ---------------------------------- */
 
 .article__header {
   border-bottom: 1px solid #eee;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
+
 
 /* -------------------------------- ARTICLE HEADER TOP ----------------------- */
 .article__header--top {
@@ -152,12 +148,121 @@
   font-size: 1.2rem;
 }
 
+/* -------------------------------- ARTICLE POST ----------------------- */
+.article__post {
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 4rem;
+  /* background: red; */
+}
+
+/* article heading */
+.article__post-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.article__post-heading figcaption a{
+  color: black;
+}
+
+
+.article__post-heading figcaption a:hover{
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+} 
+
+/* article figure */
+.article__post-figure {
+  width: 3rem;
+  height: 3rem;
+}
+
+.article__post-figure img {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+
+
+
+.article-content {
+  display: flex;
+  justify-content: space-between;
+  /* background: magenta; */
+  padding-bottom: 1.5rem;
+}
+
+/* article body */
+.article__body {
+  width: 70%;
+  /* background: greenyellow; */
+}
+
+.article__body h1 {
+  margin-bottom: 1rem;
+}
+
+.article__body p {
+  margin-bottom: 2rem;
+  color: #6b6b6b;
+  font-weight: 400;
+}
+
+.article__content-img {
+  width: 150px;
+  height: 138px;
+}
+
+.article__content-img img {
+  border-radius: 3px;
+}
+
+/* article footer */
+.article__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: green; */
+}
+
+.article__footer button {
+  background: none;
+  border: none;
+}
+
+/* article footer left */
+.article__footer-left {
+  display: flex;
+  gap: 2rem;
+}
+
+.article__footer-left > div {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.3rem;
+}
+
+/* article footer right */
+.article__footer-right button:not(:last-child) {
+  margin-right: 2rem;
+}
+
+
+
 /* -------------------------------- ASIDE CONTENT ----------------------- */
 
 .aside {
   /* background: red; */
   width: 35%;
   margin: 2rem 0 0 4rem;
+  padding-top: 2rem;
+
 }
 
 /* -------------------------------- ASIDE PREMIUM CARD ----------------------- */
