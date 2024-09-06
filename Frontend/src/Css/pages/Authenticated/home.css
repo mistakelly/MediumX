@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -58,18 +58,20 @@
 /* container */
 .main {
   width: 95%;
+  width: 90%;
+
   /* background: red; */
   height: 70vh;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  /* justify-content: space-between; */
+  /* gap: 1rem; */
 }
 
 .article {
   border-right: 1px solid #eee;
   /* background: pink; */
-  width: 60%;
+  width: 80%;
 }
 
 .article__content {
@@ -153,6 +155,46 @@
 /* -------------------------------- ASIDE CONTENT ----------------------- */
 
 .aside {
-  background: red;
-  padding-left: 1rem;
+  /* background: red; */
+  width: 35%;
+  margin: 2rem 0 0 4rem;
+}
+
+.aside_premium-card {
+  background: #f7f7f7;
+  padding: 2.5rem;
+  display: flex;
+  border-radius: 20px;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.aside_premium-info p:first-child {
+  font-weight: 900;
+}
+
+.aside_premium-info > * {
+  margin-bottom: .5rem;
+}
+
+.aside_premium-info p:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.aside_premium-info button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 20px;
+  background: #e7e7e7;
+}
+
+.aside__premium-image {
+  width: 10rem;
+  height: 8rem;
+}
+
+.aside__premium-image i {
+  font-size: 3rem;
 }
