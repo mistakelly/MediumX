@@ -160,6 +160,7 @@
   margin: 2rem 0 0 4rem;
 }
 
+/* -------------------------------- ASIDE PREMIUM CARD ----------------------- */
 .aside_premium-card {
   background: #f7f7f7;
   padding: 2.5rem;
@@ -168,15 +169,15 @@
   gap: 1rem;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 4rem;
 }
-
 
 .aside_premium-info p:first-child {
   font-weight: 900;
 }
 
 .aside_premium-info > * {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .aside_premium-info p:last-of-type {
@@ -197,4 +198,58 @@
 
 .aside__premium-image i {
   font-size: 3rem;
+}
+
+/* -------------------------------- ASIDE RECOMMEND PEOPLE ----------------------- */
+
+.recommend {
+  /* background: red; */
+}
+.recommend h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.recommend__person {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.recommend__person-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.recommend__person-image {
+  width: 66px;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 0.2rem;
+}
+
+.recommend__person-image img {
+  border-radius: 50%;
+}
+
+.recommend__person-details p {
+  color: black;
+  font-weight: 900;
+}
+
+.recommend__person-details span {
+  font-size: 1.3rem;
+  font-weight: 100;
+  color: #333;
+}
+
+.recommend__person-action button {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  background: #e7e7e7;
+  font-size: 1.3rem;
 }
