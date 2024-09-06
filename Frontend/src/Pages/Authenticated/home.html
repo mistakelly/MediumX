@@ -6,6 +6,11 @@
     <title>home</title>
 
     <link rel="stylesheet" href="../../Css/pages/Authenticated/home.css" />
+    <!-- Font awsome icon cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <header class="header">
@@ -83,10 +88,65 @@
 
     <div class="container">
       <main class="main">
-        <article class="main__article">
-            <div class="main__content"></div>
+        <article class="article">
+          <div class="article__content">
+            <div class="article__header">
+              <!-- Main header top -->
+              <div class="article__header--top">
+                <form action="#" id="form" class="article__form">
+                  <div class="article__search-div">
+                    <input
+                      type="text"
+                      placeholder="search..."
+                      class="article__search-input"
+                    />
+
+                    <div class="article__search-svg">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          fill-rule="evenodd"
+                          d="M4.092 11.06a6.95 6.95 0 1 1 13.9 0 6.95 6.95 0 0 1-13.9 0m6.95-8.05a8.05 8.05 0 1 0 5.13 14.26l3.75 3.75a.56.56 0 1 0 .79-.79l-3.73-3.73A8.05 8.05 0 0 0 11.042 3z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </form>
+
+                <div class="article__recommend">
+                  <ul>
+                    <p>My topics:</p>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">UX</a></li>
+                    <li><a href="#">Marketing</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- ARTICLE HEADER BOTTOM -->
+              <div class="article__header--botttom">
+                <h1>Articles</h1>
+
+                <div class="article__reommend-more">
+                  <p>More<i class="fas fa-chevron-down"></i></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </article>
-        <aside class="main__aside"></aside>
+
+
+        <aside class="aside">
+            
+        </aside>
       </main>
     </div>
   </body>
