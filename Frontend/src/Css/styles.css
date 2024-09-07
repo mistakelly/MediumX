@@ -179,7 +179,7 @@ body.modal-active::before {
     min-width: 446.391px;
   }
 
-  .trending {
+  .trend {
     background: black;
     /* height: 80vh; */
     color: white;
@@ -187,32 +187,32 @@ body.modal-active::before {
     padding-bottom: 4rem;
   }
 
-  .trending__content {
-    width: 80%;
+  .trend__content {
+    width: 90%;
     margin: 0 auto;
     padding-top: 4rem;
   }
 
-  .trending__header {
+  .trend__header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
   }
 
-  .trending__title h1 {
+  .trend__title h1 {
     color: white;
     line-height: 1.1;
     letter-spacing: 0.5mm;
     font-size: 4rem;
   }
 
-  .trending__title p {
+  .trend__title p {
     font-size: 1.6rem;
     line-height: 1.1;
     letter-spacing: 0.3mm;
   }
 
-  .trending__more,
+  .trend__more,
   .rotate-svg {
     background: white;
     border-radius: 50%;
@@ -224,13 +224,13 @@ body.modal-active::before {
     cursor: pointer;
   }
 
-  .trending-post__num h1 {
+  .trend-post__num h1 {
     color: rgb(135, 118, 118);
     font-size: 8rem;
     font-weight: bolder;
   }
 
-  .trending-post__author {
+  .trend-post__author {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -238,23 +238,29 @@ body.modal-active::before {
     color: #e0d4d4;
   }
 
-  .trending-post__title h1 {
+  .trend-post__title h1 {
     color: white;
     color: black;
-    font-size: 4rem;
+    /* font-size: 4rem; */
+    font-size: 2.3rem;
     font-weight: bolder;
     margin-bottom: 1rem;
   }
-  .trending-post__figcaption {
+  .trend-post__figcaption {
     display: flex;
     gap: 0.4rem;
+    color: #e6e6e6;
   }
 
-  .trending-post__figcaption img {
+  /* .trend-post__figcaption p{
+    color: #3333;
+  } */
+
+  .trend-post__figcaption img {
     width: 2.1rem;
   }
 
-  .trending-figure {
+  .trend-figure {
     width: 40px;
     height: 40px;
     /* padding: 0.3rem; */
@@ -262,83 +268,88 @@ body.modal-active::before {
     display: flex;
   }
 
-  .trending-post__author img {
+  .trend-post__author img {
     clip-path: circle();
   }
 
-  .trending__posts {
+  .trend__posts {
     /* background: red; */
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     align-content: center;
     place-content: center;
     gap: 1rem;
-    width: 85%;
+    /* width: 85%; */
     margin: 0 auto;
   }
 
-  /* TRENDING POST */
-  .trending-post {
+  /* trend POST */
+  .trend-post {
     background: var(--color-index-background);
     padding: 1rem 1rem 1rem 1.2rem;
     border: 20px solid #ccc;
     border-radius: 10px;
+    /* max-width: 400px; */
   }
 
-  .trending-post:first-child {
+  .trend-post:first-child {
     background: rgb(29, 62, 93);
     /* background: rgb(19, 58, 58); */
-
   }
 
-   .trending-post:nth-child(2) span, .trending-post:nth-child(3) span {
+  .trend-post:nth-child(2) span,
+  .trend-post:last-child span {
     color: black;
-   }
+  }
 
-/* 
-   .trending-post span{
+  .trend-post:nth-child(2) p,
+  .trend-post:last-child p {
+    color: #333;
+  }
+  /* 
+   .trend-post span{
     color: black;
    } */
 
-  .trending-post:first-child h1{
+  .trend-post:first-child h1 {
     color: white;
   }
 
-  .trending-post:last-child {
+  /* .trend-post:last-child */
+  .trend-post:nth-child(3) {
     /* background: rgb(7, 46, 21); */
     background: rgb(19, 58, 58);
-
   }
 
-  .trending-post:last-child h1 {
+  .trend-post:nth-child(3) h1 {
     color: white;
   }
 
-  .trending-post__date {
+  .trend-post__date {
     color: #e6e6e6;
   }
 
   /* article footer */
-  .trending-post__footer {
+  .trend-post__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     /* background: green; */
   }
 
-  .trending-post__footer button {
+  .trend-post__footer button {
     background: none;
     border: none;
   }
 
   /* article footer left */
-  .trending-post__footer-left {
+  .trend-post__footer-left {
     display: flex;
     gap: 2rem;
   }
 
-  .trending-post__footer-left > div {
+  .trend-post__footer-left > div {
     display: flex;
     align-items: center;
     gap: 0.3rem;
@@ -346,32 +357,34 @@ body.modal-active::before {
   }
 
   /* article footer right */
-  .trending-post__footer-right {
+  .trend-post__footer-right {
     display: flex;
     align-items: center;
   }
 
-  .trending-post__footer-right button:not(:last-child) {
+  .trend-post__footer-right button:not(:last-child) {
     margin-right: 2rem;
   }
 }
 
 .rotate-svg {
-  transform: rotate(90deg);
   position: absolute;
   bottom: 0;
-  right: 50%;
-  /* background: green; */
-  background: none;
+  left: 50%; /* This centers it horizontally */
+  transform: translateX(-50%); /* This corrects the horizontal shift */
   height: 30px;
   width: 30px;
-  /* transform: translate(-50%, -50%); */
+  background: none;
 }
 
 .rotate-svg svg {
   /* fill: ; */
+  transform: rotate(90deg);
+
 }
 
-.trending-scroll {
+.trend-scroll {
   scroll-behavior: smooth;
 }
+
+
