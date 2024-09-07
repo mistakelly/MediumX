@@ -365,6 +365,17 @@ body.modal-active::before {
   .trend-post__footer-right button:not(:last-child) {
     margin-right: 2rem;
   }
+
+  .trend-post__num {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .trend-icon {
+    font-size: 2rem; /* Optional: Adjust size */
+    color: #f8cfcf;
+  }
 }
 
 .rotate-svg {
@@ -380,11 +391,8 @@ body.modal-active::before {
 .rotate-svg svg {
   /* fill: ; */
   transform: rotate(90deg);
-
 }
 
 .trend-scroll {
   scroll-behavior: smooth;
 }
-
-
