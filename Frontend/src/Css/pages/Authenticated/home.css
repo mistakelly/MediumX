@@ -5,11 +5,14 @@
 /* ------------------------------------------------ HEADER ---------------------------------- */
 .header {
   padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 99999;
 }
 
-.header {
-  border-bottom: 1px solid #eee;
-}
+
 
 .header__nav {
   display: flex;
@@ -44,7 +47,7 @@
 }
 
 .header__write {
-  border: 1px solid black;
+  border: 1px solid #ccc;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -82,7 +85,6 @@
   margin: 2rem 0;
 }
 
-
 /* -------------------------------- ARTICLE HEADER TOP ----------------------- */
 .article__header--top {
   display: flex;
@@ -117,7 +119,7 @@
 }
 
 .article__recommend ul li {
-  background: #ccc;
+  background: #e7e7e7;
   padding: 0.5rem 2rem;
   border-radius: 50px;
   border: none;
@@ -163,15 +165,14 @@
   gap: 1rem;
   margin-bottom: 2rem;
 }
-.article__post-heading figcaption a{
+.article__post-heading figcaption a {
   color: black;
 }
 
-
-.article__post-heading figcaption a:hover{
+.article__post-heading figcaption a:hover {
   cursor: pointer;
   border-bottom: 1px solid #ccc;
-} 
+}
 
 /* article figure */
 .article__post-figure {
@@ -186,9 +187,6 @@
   object-fit: cover;
   object-position: center bottom;
 }
-
-
-
 
 .article-content {
   display: flex;
@@ -253,8 +251,6 @@
   margin-right: 2rem;
 }
 
-
-
 /* -------------------------------- ASIDE CONTENT ----------------------- */
 
 .aside {
@@ -262,7 +258,6 @@
   width: 35%;
   margin: 2rem 0 0 4rem;
   padding-top: 2rem;
-
 }
 
 /* -------------------------------- ASIDE PREMIUM CARD ----------------------- */
@@ -309,6 +304,7 @@
 
 .recommend {
   /* background: red; */
+  margin-bottom: 2rem;
 }
 .recommend h2 {
   margin-bottom: 2rem;
@@ -319,6 +315,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.recommend__person:not(:last-child) {
   margin-bottom: 1.5rem;
 }
 
@@ -358,3 +357,78 @@
   background: #e7e7e7;
   font-size: 1.3rem;
 }
+
+/* ----------------------------- BOOKMARKED (RECENTLY SAVED )------------------------------- */
+
+.bookmarked {
+  /* background: red; */
+}
+
+.bookmarked h2 {
+  margin-bottom: 1.5rem;
+}
+
+.bookmarked__content {
+  display: flex;
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+  /* align-items: center; */
+  /* background: blue; */
+}
+
+.bookmarked__figure {
+  width: 20rem;
+  height: 10rem;
+  border: 1px solid #6b6b6b;
+  padding: 0.2rem;
+  border-radius: 10px;
+}
+.bookmarked__figure img {
+  border-radius: 10px;
+}
+
+.bookmarked__profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bookmarked__profile figcaption {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #6b6b6b;
+}
+
+.bookmarked__details {
+}
+
+.bookmarked__details p:first-child {
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.bookmarked__details p:last-of-type {
+  color: #6b6b6b;
+  margin-bottom: 0.4rem;
+}
+
+.bookmarked__profile figure {
+  width: 25px;
+  height: 25px;
+}
+
+.bookmarked__profile figure img {
+  border-radius: 50%;
+}
+
+/* ----------------------------- ASIDE FOOTER------------------------------- */
+
+.footer {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.3rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* ----------------------------- ASIDE END------------------------------- */
