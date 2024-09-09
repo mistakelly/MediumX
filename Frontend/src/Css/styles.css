@@ -375,9 +375,7 @@ body.modal-active::before {
     color: #f8cfcf;
   }
 
-  .trend-post:nth-child(even) {
-    background: red;
-  }
+
 }
 
 .rotate-svg {
