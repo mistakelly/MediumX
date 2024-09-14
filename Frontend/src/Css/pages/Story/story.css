@@ -1,4 +1,8 @@
-@import url("/Css/shared/general.css");
+/* Custom Imports */
+@import url("../../Base/base.css");
+@import url("../../Base/typography.css");
+@import url("../../utilities/general.css");
+
 
 body {
   /* background: blue; */
