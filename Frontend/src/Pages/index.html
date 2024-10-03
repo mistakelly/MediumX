@@ -20,23 +20,25 @@
 
   <!-- BODY -->
   <body>
+    <!-------------------- HEADER -------------------->
     <header class="header">
       <nav class="nav">
         <!-- app icon -->
         <div class="nav__icon">
-          <!-- CUSTOM HTML FROM JS -->
-          <!-- <app-icon></app-icon>X -->
           <h1><a href="#">MediumX</a></h1>
         </div>
 
         <!-- NAV ITEMS -->
         <ul class="nav__items">
           <li class="nav__item nav__item--story">Our story</li>
+
           <li class="nav__item nav__item--membership">
             <a href="#trend"><i class="fa fa-chart-line"></i> Trending</a>
           </li>
+
           <!-- <li class="nav__item nav__item--write">Write</li> -->
           <li class="nav__item nav__item--sign-in">Sign in</li>
+
           <button type="button" class="nav__item nav__item--get-started">
             Get Started
           </button>
@@ -44,23 +46,23 @@
       </nav>
     </header>
 
-    <!-- FEEDBACK -->
+    <!-------------------- FEEDBACK -------------------->
     <div class="feedback"></div>
 
-    <!-- MAIN CONTAINER -->
+    <!-------------------- MAIN CONTAINER-------------------->
     <main class="main">
       <div class="main__left">
         <h1>Human</h1>
         <h1>stories & ideas</h1>
         <p>A place to read, write, and deepen your understanding</p>
-        <div class="main__addition-content">
+        <div class="main__more-content">
           <p>
             A place to read, write, and deepen your understanding Lorem ipsum
             dolor sit amet consectetur, adipisicing elit. In porro adipisci
           </p>
         </div>
         <button type="button" class="main__left-sidebar-write-btn">
-          Write
+          Start Reading...
         </button>
       </div>
 
@@ -74,23 +76,20 @@
 
       <!-- Modal -->
       <!-- Social authentication inserted through Js -->
-
-      
     </main>
 
-    <!-- trend ON MEDIUMX -->
-    <div class="trend" id="trend">
+    <!-------------------- TREND CONTAINER-------------------->
+    <section class="trend" id="trend">
       <div class="trend__content">
-        <!-- trend HEADER -->
+        <!-- TREND HEADER -->
         <div class="trend__header">
           <div class="trend__title">
             <h1>Trending on MediumX</h1>
             <p>Discover trend stroies from writers on any topic</p>
           </div>
 
+          <!-- TREND MORE -->
           <div class="trend__more">
-            <!-- <i class="fas fa-arrow-right"></i> -->
-
             <svg
               class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
               focusable="false"
@@ -103,18 +102,19 @@
           </div>
         </div>
 
-        <!-- trend BODY -->
-        <div class="trend__posts">
+        <!-- TREND BODY -->
+        <!-- TREND POSTS -->
+        <div class="trend-posts">
+          <!-- TREND POST -->
           <div class="trend-post">
-            <div class="trend-post__num">
+            <!-- TREND POST SCORE -->
+            <div class="trend-post__score">
               <h1 class="post-num"><span>#1</span></h1>
-              <!-- <i class="fas fa-fire" ></i> -->
-
-              <!-- <a class="trend-icon" href="#trend"> 🔥</a> -->
               <i class="fa fa-chart-line trend-icon"></i>
             </div>
 
-            <div class="trend-post__content">
+            <!-- TREND POST CONTENT -->
+            <main class="trend-post__content">
               <div class="trend-post__author">
                 <figure class="trend-figure">
                   <img src="../Assets/images/access2.jpeg" alt="trend author" />
@@ -127,16 +127,18 @@
                 </figcaption>
               </div>
 
-              <!-- trend POST TITLE -->
-
+              <!-- TREND POST TITLE -->
               <div class="trend-post__title">
                 <h1>3 productivity hacks for developers</h1>
               </div>
 
-              <!-- trend POST DATE -->
-              <div class="trend-post__footer">
-                <div class="trend-post__footer-left">
-                  <div class="trend__footer-clap">
+              <!-- TREND POST DATE  (FOOTER)-->
+              <div class="trend-footer">
+
+                <!-- TREND FOOTER LEFT -->
+                <div class="trend-footer__left">
+
+                  <div class="trend-footer__clap">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -154,7 +156,7 @@
                     <span>1.5k</span>
                   </div>
 
-                  <div class="trend-post__footer-comment">
+                  <div class="trend-footer__comment">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -171,25 +173,27 @@
                   </div>
                 </div>
 
-                <!-- trend POST RIGHT -->
-                <div class="trend-post__footer-right">
-                  <div class="trend-post__date">
-                    <p>sep 2024</p>
-                  </div>
+                <!-- TREND POST RIGHT -->
+                <div class="trend-footer__right">
+                  <p>sep 2024</p>
                 </div>
               </div>
 
               <!-- END OF trend POST CONTENT -->
-            </div>
+            </main>
           </div>
 
+
+           <!-- TREND POST -->
           <div class="trend-post">
-            <div class="trend-post__num">
-              <h1><span>#2</span></h1>
+            <!-- TREND POST SCORE -->
+            <div class="trend-post__score">
+              <h1 class="post-num"><span>#2</span></h1>
               <i class="fa fa-chart-line trend-icon"></i>
             </div>
 
-            <div class="trend-post__content">
+            <!-- TREND POST CONTENT -->
+            <main class="trend-post__content">
               <div class="trend-post__author">
                 <figure class="trend-figure">
                   <img src="../Assets/images/access2.jpeg" alt="trend author" />
@@ -202,17 +206,18 @@
                 </figcaption>
               </div>
 
-              <!-- trend POST TITLE -->
-
+              <!-- TREND POST TITLE -->
               <div class="trend-post__title">
                 <h1>3 productivity hacks for developers</h1>
               </div>
 
-              <!-- trend POST DATE -->
+              <!-- TREND POST DATE  (FOOTER)-->
+              <div class="trend-footer">
 
-              <div class="trend-post__footer">
-                <div class="trend-post__footer-left">
-                  <div class="section__footer-clap">
+                <!-- TREND FOOTER LEFT -->
+                <div class="trend-footer__left">
+
+                  <div class="trend-footer__clap">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -230,7 +235,7 @@
                     <span>1.5k</span>
                   </div>
 
-                  <div class="trend-post__footer-comment">
+                  <div class="trend-footer__comment">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -247,25 +252,28 @@
                   </div>
                 </div>
 
-                <!-- trend POST RIGHT -->
-                <div class="trend-post__footer-right">
-                  <div class="trend-post__date">
-                    <p>sep 2024</p>
-                  </div>
+                <!-- TREND POST RIGHT -->
+                <div class="trend-footer__right">
+                  <p>sep 2024</p>
                 </div>
               </div>
 
+        
               <!-- END OF trend POST CONTENT -->
-            </div>
+            </main>
           </div>
 
+
+           <!-- TREND POST -->
           <div class="trend-post">
-            <div class="trend-post__num">
-              <h1><span>#3</span></h1>
+            <!-- TREND POST SCORE -->
+            <div class="trend-post__score">
+              <h1 class="post-num"><span>#3</span></h1>
               <i class="fa fa-chart-line trend-icon"></i>
             </div>
 
-            <div class="trend-post__content">
+            <!-- TREND POST CONTENT -->
+            <main class="trend-post__content">
               <div class="trend-post__author">
                 <figure class="trend-figure">
                   <img src="../Assets/images/access2.jpeg" alt="trend author" />
@@ -278,16 +286,18 @@
                 </figcaption>
               </div>
 
-              <!-- trend POST TITLE -->
-
+              <!-- TREND POST TITLE -->
               <div class="trend-post__title">
                 <h1>3 productivity hacks for developers</h1>
               </div>
 
-              <!-- trend POST DATE -->
-              <div class="trend-post__footer">
-                <div class="trend-post__footer-left">
-                  <div class="section__footer-clap">
+              <!-- TREND POST DATE  (FOOTER)-->
+              <div class="trend-footer">
+
+                <!-- TREND FOOTER LEFT -->
+                <div class="trend-footer__left">
+
+                  <div class="trend-footer__clap">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -305,7 +315,7 @@
                     <span>1.5k</span>
                   </div>
 
-                  <div class="trend-post__footer-comment">
+                  <div class="trend-footer__comment">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -322,25 +332,27 @@
                   </div>
                 </div>
 
-                <!-- trend POST RIGHT -->
-                <div class="trend-post__footer-right">
-                  <div class="trend-post__date">
-                    <p>sep 2024</p>
-                  </div>
+                <!-- TREND POST RIGHT -->
+                <div class="trend-footer__right">
+                  <p>sep 2024</p>
                 </div>
               </div>
 
               <!-- END OF trend POST CONTENT -->
-            </div>
+            </main>
           </div>
 
+
+           <!-- TREND POST -->
           <div class="trend-post">
-            <div class="trend-post__num">
-              <h1><span>#4</span></h1>
+            <!-- TREND POST SCORE -->
+            <div class="trend-post__score">
+              <h1 class="post-num"><span>#4</span></h1>
               <i class="fa fa-chart-line trend-icon"></i>
             </div>
 
-            <div class="trend-post__content">
+            <!-- TREND POST CONTENT -->
+            <main class="trend-post__content">
               <div class="trend-post__author">
                 <figure class="trend-figure">
                   <img src="../Assets/images/access2.jpeg" alt="trend author" />
@@ -353,17 +365,18 @@
                 </figcaption>
               </div>
 
-              <!-- trend POST TITLE -->
-
+              <!-- TREND POST TITLE -->
               <div class="trend-post__title">
                 <h1>3 productivity hacks for developers</h1>
               </div>
 
-              <!-- trend POST DATE -->
+              <!-- TREND POST DATE  (FOOTER)-->
+              <div class="trend-footer">
 
-              <div class="trend-post__footer">
-                <div class="trend-post__footer-left">
-                  <div class="section__footer-clap">
+                <!-- TREND FOOTER LEFT -->
+                <div class="trend-footer__left">
+
+                  <div class="trend-footer__clap">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -381,7 +394,7 @@
                     <span>1.5k</span>
                   </div>
 
-                  <div class="trend-post__footer-comment">
+                  <div class="trend-footer__comment">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -398,23 +411,22 @@
                   </div>
                 </div>
 
-                <!-- trend POST RIGHT -->
-                <div class="trend-post__footer-right">
-                  <div class="trend-post__date">
-                    <p>sep 2024</p>
-                  </div>
+                <!-- TREND POST RIGHT -->
+                <div class="trend-footer__right">
+                  <p>sep 2024</p>
                 </div>
               </div>
 
               <!-- END OF trend POST CONTENT -->
-            </div>
+            </main>
           </div>
-
-          <!-- END OF trend POST -->
+          
         </div>
       </div>
-    </div>
+    </section>
 
+
+  <!--TODO:  FINISH RESTRUCTURING -->
     <!-- <div class="stories"></div> -->
     <section class="post-container">
       <div class="story__header">
@@ -917,20 +929,38 @@
           <div class="aside__recommend">
             <h2>Recommended topics</h2>
             <ul class="recommend-topics">
-              <li><a href="#"><i class="fas fa-futbol"></i> Football</a></li>
-              <li><a href="#"><i class="fas fa-code"></i> Programming</a></li>
-              <li><a href="#"><i class="fas fa-microchip"></i> Technology</a></li>
-              <li><a href="#"><i class="fas fa-utensils"></i> Cooking</a></li>
-              <li><a href="#"><i class="fas fa-flask"></i> Science</a></li>
-              <li><a href="#"><i class="fas fa-futbol"></i> Football</a></li>
-              <li><a href="#"><i class="fas fa-code"></i> Programming</a></li>
-              <li><a href="#"><i class="fas fa-microchip"></i> Technology</a></li>
-              <li><a href="#"><i class="fas fa-utensils"></i> Cooking</a></li>
+              <li>
+                <a href="#"><i class="fas fa-futbol"></i> Football</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-code"></i> Programming</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-microchip"></i> Technology</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-utensils"></i> Cooking</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-flask"></i> Science</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-futbol"></i> Football</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-code"></i> Programming</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-microchip"></i> Technology</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-utensils"></i> Cooking</a>
+              </li>
               <!-- <li><a href="#"><i class="fas fa-flask"></i> Science</a></li> -->
             </ul>
 
             <div class="recommend__more">
-              <p><a href="">Explore more topics</a> </p>
+              <p><a href="">Explore more topics</a></p>
             </div>
           </div>
 
@@ -938,30 +968,31 @@
 
           <div class="share">
             <figure class="share__figure">
-              <img src="../Assets/images/access.jpeg" alt="share">
+              <img src="../Assets/images/access.jpeg" alt="share" />
             </figure>
 
             <div class="share__info">
               <h2>Share the Inspiration, Amplify the Community!</h2>
-              <p>Join us in empowering writers and creators by spreading the word about MediumX. Together, we can create a thriving space for stories, ideas, and innovation. Share with your network and help us grow this vibrant community!</p>
+              <p>
+                Join us in empowering writers and creators by spreading the word
+                about MediumX. Together, we can create a thriving space for
+                stories, ideas, and innovation. Share with your network and help
+                us grow this vibrant community!
+              </p>
               <button>Share MediumX</button>
             </div>
           </div>
 
-
-            <footer class="footer footer--desktop">
-              <div class="footer__item"><a href="#">Help</a></div>
-              <div class="footer__item"><a href="#">Status</a></div>
-              <div class="footer__item"><a href="#">About</a></div>
-              <div class="footer__item"><a href="#">Careers</a></div>
-              <div class="footer__item"><a href="#">Blog</a></div>
-
-            </footer>
+          <footer class="footer footer--desktop">
+            <div class="footer__item"><a href="#">Help</a></div>
+            <div class="footer__item"><a href="#">Status</a></div>
+            <div class="footer__item"><a href="#">About</a></div>
+            <div class="footer__item"><a href="#">Careers</a></div>
+            <div class="footer__item"><a href="#">Blog</a></div>
+          </footer>
         </div>
       </div>
     </section>
-
-  
 
     <!-- <footer class="footer footer--mobile">
       <div class="footer__item"><a href="#">About</a></div>
@@ -972,6 +1003,7 @@
     <!-- </div> -->
 
     <!-- <script src="../Js/shared/Components/custom_html_svg_icons.js"></script> -->
+    <!-- <script src="../Js/script.js" type="module"></script> -->
     <script src="../Js/script.js" type="module"></script>
   </body>
 </html>
