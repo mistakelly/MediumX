@@ -4,6 +4,11 @@ import os
 import sys
 
 
+join_src_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'src')
+
+sys.path.insert(0, join_src_path)
+
+
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.django.local')
