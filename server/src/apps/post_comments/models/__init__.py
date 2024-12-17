@@ -1,0 +1,1 @@
+from .post_comment_model import PostComment
