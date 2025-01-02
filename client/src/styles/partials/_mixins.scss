@@ -1,0 +1,20 @@
+@mixin button-style($bg-color, $text-color, $padding: 10px) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $padding;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 12px;
+  width: 10rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin centerElement($justify_content: center, $align_items: center) {
+  display: flex;
+  justify-content: $justify_content;
+  align-items: $align_items;
+}
