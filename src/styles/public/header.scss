@@ -1,0 +1,25 @@
+@use "@/styles/partials/mixins" as mixins;
+
+.header {
+  height: 7rem;
+  border-bottom: 1px solid black;
+  @include mixins.centerElement();
+}
+
+.nav,
+.nav__ul {
+  @include mixins.centerElement(space-between);
+}
+
+.nav {
+  width: 90%;
+  height: 100%;
+
+  &__ul {
+    gap: 1.5rem;
+  }
+
+  &__cta {
+    @include mixins.button-style(black, white);
+  }
+}

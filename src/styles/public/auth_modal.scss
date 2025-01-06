@@ -1,0 +1,115 @@
+@use "@/styles/partials/mixins" as mixins;
+
+.auth_modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 65rem;
+  padding-top: 6rem;
+}
+
+.content {
+  @include mixins.centerElement();
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+.btns {
+  padding: 0.6rem 0 0.6em 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+  cursor: pointer;
+  width: 30rem;
+  border-radius: 20px;
+  color: black;
+  background: white;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  @include mixins.centerElement(space-between);
+}
+
+.local-auth-container {
+  @include mixins.centerElement(space-between, null);
+
+  flex-direction: column;
+  width: 30rem;
+  margin-top: 2rem;
+
+  .heading {
+    @include mixins.centerElement(space-between, null);
+  }
+
+  p {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 2rem;
+  }
+}
+
+.local-auth-div {
+  width: 30rem;
+
+  input {
+    position: relative;
+    padding: 0.8rem 0 0.8em 2rem;
+    border: 1px solid #333;
+    border-radius: 20px;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  input::placeholder {
+    color: #333;
+    letter-spacing: 0.5px;
+  }
+
+  label {
+    margin: 0 0 0.4rem 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+span {
+  margin-left: -3rem;
+}
+
+.footer {
+  margin: 0 0 4rem 0;
+}
+
+.footer p {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.footer button {
+  border: none;
+  color: green;
+  cursor: pointer;
+}
+
+input {
+  width: 30rem;
+}
+
+.cancel_btn {
+  background: none;
+  position: absolute;
+  border: none;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  color: #333;
+}
