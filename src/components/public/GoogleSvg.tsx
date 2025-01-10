@@ -11,7 +11,7 @@ const GoogleSvg = () => {
       className="bt"
     >
       <g id="google">
-        <g id="google-vector" fill-rule="evenodd" clip-rule="evenodd">
+        <g id="google-vector" fillRule="evenodd" clipRule="evenodd">
           <path
             id="Shape"
             fill="#4285F4"

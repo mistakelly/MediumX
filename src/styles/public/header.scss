@@ -11,6 +11,13 @@
   @include mixins.centerElement(space-between);
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  font-size: 1.4rem;
+  color: inherit;
+}
+
 .nav {
   width: 90%;
   height: 100%;
@@ -21,5 +28,6 @@
 
   &__cta {
     @include mixins.button-style(black, white);
+    cursor: pointer;
   }
 }
