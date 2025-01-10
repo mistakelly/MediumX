@@ -1,6 +1,25 @@
 import "@/styles/public/header.scss";
+import "@/styles/public/header.scss";
+import { useModalVisibility } from "@/hooks/authmodal_hook";
+import React, { useState, forwardRef } from "react";
+import { SignUp } from "./auth/SignUp";
+import { SignIn } from "./auth/SignIn";
 
-function LandingHeader() {
+const PublicHeader = () => {
+  const { isModalVisible, setIsModalVisible, modalRef } = useModalVisibility();
+
+  const [modalType, SetModalType] = useState<"signIn" | "signUp" | null>(null);
+
+  // use function currying to dynamically set which model to open when a toggle button
+  const openModal = (type: "signUp" | "signIn") => (e: React.MouseEvent) => {
+    e.stopPropagation();
+    SetModalType(type);
+    setIsModalVisible((prev) => !prev);
+  };
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <header className="header">
       <nav className="nav">
@@ -12,14 +31,35 @@ function LandingHeader() {
           <li>
             <a href="#">Trending</a>
           </li>
-          <li>
-            <a href="#">Sign in</a>
-          </li>
-          <button className="nav__cta">Get Started</button>
+          <button onClick={openModal("signIn")}>Sign In</button>
+          <button className="nav__cta" onClick={openModal("signUp")}>
+            Get Started
+          </button>
+          {/* Auth Modal */}
+          {isModalVisible && modalType === "signIn" && (
+            <SignIn
+              onSwitch={(e) => {
+                e.stopPropagation();
+                SetModalType("signUp");
+              }}
+              closeModal={closeModal}
+              modalRef={modalRef}
+            />
+          )}
+          {isModalVisible && modalType === "signUp" && (
+            <SignUp
+              onSwitch={(e) => {
+                e.stopPropagation();
+                SetModalType("signIn");
+              }}
+              closeModal={closeModal}
+              modalRef={modalRef}
+            />
+          )}
         </ul>
       </nav>
     </header>
   );
-}
+};
 
-export default LandingHeader;
+export default PublicHeader;

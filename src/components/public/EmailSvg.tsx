@@ -20,7 +20,7 @@ const EmailSvg = () => {
           ></rect>
           <path
             id="Vector 107"
-            stroke-linecap="round"
+            strokeLinecap="round"
             d="m3.5 8.005 8.5 6 8.5-6"
           ></path>
         </g>

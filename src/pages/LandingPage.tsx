@@ -1,14 +1,14 @@
-import LandingHeader from "@/components/public/Header";
+import PublicHeader from "@/components/public/Header";
 import LandingPageBody from "@/components/public/MainContent";
 import Trend from "./Trend";
-import AuthModal from "@/components/public/AuthModal";
+import { SignUp } from "@/components/public/auth/SignUp";
+// import { SignIn, SignUp } from "@/components/public/AuthModal";
 
 function LandingPage() {
   return (
     <>
-      <LandingHeader />
+      <PublicHeader />
       <LandingPageBody />;
-      <AuthModal />
       <Trend />
     </>
   );
