@@ -3,7 +3,7 @@ import React from "react";
 import { BaseModal } from "./BaseModal";
 import { SocialLogin } from "./SocialLogin";
 import { LocalAuthForm } from "./LocalAuth";
-import { AuthButton } from "./AuthButton";
+import { SubmitButton } from "./SubmitButton";
 import { AuthModalFooter } from "./Footer";
 import { CloseModalButton } from "./CloseModalButton";
 
@@ -27,7 +27,7 @@ export const SignUp: React.FC<AuthModalProps> = ({
 
   return (
     <BaseModal heading="Join Mediumx" ref={modalRef}>
-      <SocialLogin label="Sign up" />
+      <SocialLogin buttonLabel="Sign up" />
 
       <LocalAuthForm
         formData={formData}
@@ -35,7 +35,7 @@ export const SignUp: React.FC<AuthModalProps> = ({
         onSubmit={onSubmit}
       />
 
-      <AuthButton buttonLabel="Sign up" onSubmit={onSubmit} />
+      <SubmitButton buttonLabel="Sign up" onSubmit={onSubmit} />
 
       <CloseModalButton closeModal={closeModal} />
 

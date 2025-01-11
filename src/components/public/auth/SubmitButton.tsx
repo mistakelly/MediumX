@@ -1,12 +1,12 @@
 import { AuthButtonProps } from "./interface";
 
-export const AuthButton: React.FC<AuthButtonProps> = ({
+export const SubmitButton: React.FC<AuthButtonProps> = ({
   buttonLabel,
   onSubmit,
 }) => {
   return (
     <>
-      <div className="submit-btn">
+      <div>
         <button className="submit-btn" onClick={onSubmit}>
           {buttonLabel}
         </button>

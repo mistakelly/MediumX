@@ -29,6 +29,9 @@ export interface AuthButtonProps extends Pick<LocalAuthFormProps, "onSubmit"> {
   buttonLabel: string;
 }
 
+export interface SocialLoginProps
+  extends Pick<AuthButtonProps, "buttonLabel"> {}
+
 export interface closeModalButtonProps
   extends Pick<AuthModalProps, "closeModal"> {}
 
