@@ -16,6 +16,8 @@ function LandingPageBody() {
       <picture className="main__picture">
         <img src={homeImage} alt="" />
       </picture>
+
+      <div className="scroll-arrow"> ❱ </div>
     </main>
   );
 }

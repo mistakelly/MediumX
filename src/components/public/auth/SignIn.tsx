@@ -3,7 +3,7 @@ import { useState } from "react";
 import { BaseModal } from "./BaseModal";
 import { SocialLogin } from "./SocialLogin";
 import { LocalAuthForm } from "./LocalAuth";
-import { AuthButton } from "./AuthButton";
+import { SubmitButton } from "./SubmitButton";
 import { AuthModalFooter } from "./Footer";
 import { CloseModalButton } from "./CloseModalButton";
 import { AuthModalProps } from "./interface";
@@ -34,13 +34,13 @@ export const SignIn: React.FC<AuthModalProps> = ({
 
   return (
     <BaseModal heading="Welcome To Mediumx" ref={modalRef}>
-      <SocialLogin label="Sign in" />
+      <SocialLogin buttonLabel="Sign in" />
       <LocalAuthForm
         formData={formData}
         handleInputChange={handleInputChange}
         onSubmit={onSubmit}
       />
-      <AuthButton buttonLabel="Sign In" onSubmit={onSubmit} />
+      <SubmitButton buttonLabel="Sign In" onSubmit={onSubmit} />
       <CloseModalButton closeModal={closeModal} />
       <AuthModalFooter>
         <p>

@@ -1,4 +1,154 @@
-.section {
+.trend-section {
   background: black;
-  height: 100vh;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  padding: 0 0 10rem 0;
+
+  .container {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .trend-header {
+    padding-top: 4rem;
+    margin-bottom: 4rem;
+
+    &__title {
+      color: white;
+      font-size: 4rem;
+    }
+
+    &__desc {
+      color: white;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.trend-card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  gap: 2rem;
+  overflow-x: hidden;
+}
+
+.trend-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 41rem;
+  padding: 1.5rem;
+  border: 1.5rem solid rgb(237, 235, 228);
+  margin-bottom: 4rem;
+
+  &-number {
+    h1 {
+      font-weight: bold;
+      font-size: 8rem;
+    }
+  }
+
+  &-icon {
+    width: 4rem;
+    height: 4rem;
+    background: #f0f0f0;
+    clip-path: circle();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: green;
+
+    i {
+      font-size: 1.8rem;
+    }
+  }
+
+  &:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &__container {
+    padding: 1.5rem;
+  }
+
+  // Header styles
+  .trend-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  // Body styles
+  .trend-card-body {
+    margin-bottom: 2.5rem;
+
+    &-profile {
+      display: flex;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      &__picture {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .premium-badge {
+        width: 2rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+
+    .clap,
+    .comment {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .date-posted p {
+      color: green;
+    }
+  }
+}
+
+.arrow div {
+  position: absolute;
+  top: 50%;
+  font-size: 4rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.right-arrow {
+  right: 3%;
+  margin-right: 1.9rem;
+}
+
+.left-arrow {
+  left: 3%;
 }
