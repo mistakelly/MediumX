@@ -2,6 +2,7 @@ import PublicHeader from "@/components/public/Header";
 import LandingPageBody from "@/components/public/MainContent";
 import TrendPage from "./TrendPage";
 import TrendCard from "@/components/public/Trend";
+import PreviewStoryPage from "./PreviewStory";
 
 function LandingPage() {
   return (
@@ -17,6 +18,9 @@ function LandingPage() {
         <TrendCard trendNo={6} />
         <TrendCard trendNo={7} />
       </TrendPage>
+      <PreviewStoryPage>
+        <div></div>
+      </PreviewStoryPage>
     </>
   );
 }
