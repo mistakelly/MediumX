@@ -1,0 +1,130 @@
+// Story
+.story {
+  width: 90%;
+  display: block;
+
+  &__main {
+    background: green;
+  }
+
+  &__author-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    picture {
+      width: 3rem;
+      height: 3rem;
+      img {
+        clip-path: circle();
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 2rem;
+
+    &__body {
+      h2 {
+        margin-bottom: 0.4rem;
+      }
+
+      .story-topic p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.7rem;
+        color: #949494;
+        margin-bottom: 2rem;
+      }
+
+      width: 65%;
+    }
+
+    .story-picture {
+      width: 20%;
+      height: 12rem;
+
+      img {
+        border-radius: 1rem;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    padding-bottom: 2rem;
+    color: #949494;
+
+    &__left,
+    &__right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .clap,
+      .comment {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        svg {
+          color: inherit;
+        }
+
+        span {
+          font-size: 1.5rem;
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+.story-container {
+  > a:first-child {
+    .story__author-info {
+      order: 1;
+    }
+    .story-content {
+      flex-direction: column-reverse;
+
+      &__body {
+        width: 100%;
+      }
+
+      .story-picture {
+        width: 100%;
+        height: 35rem;
+        margin-bottom: 2rem;
+        position: relative;
+        img {
+          border-radius: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center 20%;
+          background-position: center;
+          display: block;
+        }
+      }
+    }
+  }
+}
