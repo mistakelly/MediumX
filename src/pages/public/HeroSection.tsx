@@ -15,7 +15,7 @@ function HeroSection() {
 
       <picture className="main__picture">
         <img
-          src="./public/assets/images/home_image.webp"
+          src="/assets/images/home_image.webp"
           alt="Hero-Section-image"
         />
       </picture>
