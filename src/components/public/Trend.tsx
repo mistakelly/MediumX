@@ -1,5 +1,3 @@
-import testImage from "@/assets/images/test_img.png";
-import premiumBadeg from "@/assets/images/premium-badge.webp";
 import { FC } from "react";
 
 interface TrendCardProps {
@@ -24,7 +22,7 @@ const TrendCard: FC<TrendCardProps> = ({ trendNo }) => {
         <div className="trend-card-body">
           <div className="trend-card-body-profile">
             <div className="trend-card-body-profile__picture">
-              <img src={testImage} alt="test-image" />
+              <img src="/assets/images/test_img.png" />
             </div>
             <p>kelly</p>
 
@@ -32,7 +30,7 @@ const TrendCard: FC<TrendCardProps> = ({ trendNo }) => {
             <div className="premium-badge">
               <img
                 className="premium-badge"
-                src={premiumBadeg}
+                src="/assets/images/premium-badge.webp"
                 alt="premium-badg"
               />
             </div>

@@ -1,34 +1,27 @@
 @use "@/styles/partials/mixins" as mixins;
 
 .preview-story {
-  //   background: red;
   background: white;
   width: 100%;
-  height: 100vh;
-  margin-top: -6.5rem;
-  .container {
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 15rem;
-    // background: blue;
-  }
+  margin-top: -6.9rem;
+  padding-top: 15rem;
 }
 
 .preview-story__intro {
   @include mixins.centerElement();
   flex-direction: column;
+  margin-bottom: 8rem;
 
   h1 {
     font-size: 4rem;
   }
 
   p {
-    font-size: 1.5rem;
-    margin-bottom: 4rem;
+    font-size: 1.9rem;
+    margin-bottom: 3rem;
   }
 
   form {
-    // background: green;
     position: relative;
   }
 
@@ -53,5 +46,98 @@
     top: 50%;
     right: 1.5rem;
     transform: translateY(-50%);
+  }
+}
+
+.preview-story-container {
+  display: flex;
+  justify-content: space-between;
+
+  .stories {
+    flex: 1.5;
+    border-right: 1px solid #ccc;
+
+    &__intro {
+      z-index: 1;
+      background: white;
+      position: sticky;
+      top: 9%;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ccc;
+      padding-top: 1rem;
+      h2 {
+        font-size: 3.5rem;
+        margin-bottom: 0.9rem;
+      }
+
+      p {
+        font-size: 1.9rem;
+        margin-bottom: 3rem;
+      }
+
+      button {
+        padding: 1rem 1.5rem;
+        border: none;
+        border-radius: 10rem;
+        background: #333;
+        color: white;
+        font-size: 1.2rem;
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  // outro
+  .outro {
+    align-self: flex-start;
+    width: 30%;
+    position: sticky;
+    top: 20%;
+
+    top: 8%;
+    margin-left: 2rem;
+
+    .outro-card {
+      border: 1.5rem solid rgb(237, 235, 228);
+      margin-bottom: 1rem;
+
+      picture {
+        height: 35rem;
+        width: 100%;
+        overflow: hidden;
+
+        img {
+          margin-bottom: 2rem;
+          margin-left: 3rem;
+        }
+      }
+
+      h2 {
+        margin-top: 4rem;
+        padding-left: 1rem;
+      }
+
+      p {
+        padding: 1rem 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .cta {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+
+        button {
+          display: block;
+          padding: 1rem 1.5rem;
+          border: none;
+          border-radius: 10rem;
+          background: #333;
+          color: white;
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
 }

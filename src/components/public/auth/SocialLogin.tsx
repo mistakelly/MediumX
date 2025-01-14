@@ -1,5 +1,5 @@
-import EmailSvg from "../EmailSvg";
-import GoogleSvg from "../GoogleSvg";
+import EmailSvg from "../../svg/EmailSvg";
+import GoogleSvg from "../../svg/GoogleSvg";
 import { SocialLoginProps } from "./interface";
 
 export const SocialLogin: React.FC<SocialLoginProps> = ({ buttonLabel }) => {

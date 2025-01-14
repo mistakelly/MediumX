@@ -1,4 +1,4 @@
-import CancelSvg from "./CancelSvg";
+import CancelSvg from "../../svg/CancelSvg";
 import { closeModalButtonProps } from "./interface";
 
 export const CloseModalButton: React.FC<closeModalButtonProps> = ({
