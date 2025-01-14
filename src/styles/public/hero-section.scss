@@ -1,5 +1,5 @@
 @use "@/styles/partials/mixins" as mixins;
-@use "@/styles/partials/common/animations";
+@use "@/styles/common/animations";
 
 .main {
   @include mixins.centerElement(space-between, null);
@@ -60,3 +60,5 @@
   cursor: pointer;
   animation: bounce 3s infinite;
 }
+
+

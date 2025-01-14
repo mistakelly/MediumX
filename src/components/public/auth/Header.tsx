@@ -1,9 +1,9 @@
 import "@/styles/public/header.scss";
 import "@/styles/public/header.scss";
 import { useModalVisibility } from "@/hooks/authmodal_hook";
-import React, { useState, forwardRef } from "react";
-import { SignUp } from "./auth/SignUp";
-import { SignIn } from "./auth/SignIn";
+import React, { useState } from "react";
+import { SignUp } from "./SignUp";
+import { SignIn } from "./SignIn";
 
 const PublicHeader = () => {
   const { isModalVisible, setIsModalVisible, modalRef } = useModalVisibility();

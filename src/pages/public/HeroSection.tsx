@@ -1,7 +1,7 @@
-import "@/styles/public/main.scss";
-import homeImage from "@/assets/images/home_image.webp";
+import "@/styles/public/hero-section.scss";
+// import homeImage from "@/assets/images/home_image.webp";
 
-function LandingPageBody() {
+function HeroSection() {
   return (
     <main className="main">
       <section className="main__intro">
@@ -14,7 +14,10 @@ function LandingPageBody() {
       </section>
 
       <picture className="main__picture">
-        <img src={homeImage} alt="" />
+        <img
+          src="/assets/images/home_image.webp"
+          alt="Hero-Section-image"
+        />
       </picture>
 
       <div className="scroll-arrow"> ❱ </div>
@@ -22,4 +25,4 @@ function LandingPageBody() {
   );
 }
 
-export default LandingPageBody;
+export default HeroSection;
